@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <base href="/robo/">
+        <meta charset="utf-8"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="viewport" content="width=device-width, maximum-scale=1.5, minimum-scale=1.0,user-scalable=yes,initial-scale=1.0"/>
+        <title>SAPPOROID CAMERA VIEW TEST</title>
+        <link rel="stylesheet" href="http://nonakaryuichi.github.com/jQueryMobileSite/css/classmethod.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <style type="text/css">
+            h1 {
+                overflow:visible;
+                white-space:normal;
+            }
+            label,b {
+            	white-space:pre;
+            	font-family:monospace;
+            }
+        </style>
+</head>
+<body>
+        <script type="text/javascript">
+            function msgSend(obj)
+            {
+                var arg1 = "";
+                var arg2 = "";
+                var arg3 = "";
+                var arg4 = "";
+            	if(obj.name == "act_set_sound"){
+            		arg1 = obj.options[obj.selectedIndex].text;
+            	} else if(obj.name == "act_set_sensor") {
+            		arg1 = document.getElementById("act_slider-range").value;
+            		arg2 = document.getElementById("act_slider-color").value;
+            	} else if(obj.name == "act_set_color") {
+            		arg1 = document.getElementById("act_slider-r").value;
+            		arg2 = document.getElementById("act_slider-g").value;
+            		arg3 = document.getElementById("act_slider-b").value;
+            	} else if(obj.name == "act_set_speed") {
+            		arg1 = document.getElementById("act_slider-get").value;
+            		arg2 = document.getElementById("act_slider-goal").value;
+            		arg3 = document.getElementById("act_slider-back").value;
+            		arg4 = document.getElementById("act_slider-turn").value;
+            	} else if(obj.name == "act_set_angle_r") {
+            		arg1 = document.getElementById("act_slider-30_r").value;
+            		arg2 = document.getElementById("act_slider-60_r").value;
+            		arg3 = document.getElementById("act_slider-90_r").value;
+            		arg4 = document.getElementById("act_slider-180_r").value;
+            	} else if(obj.name == "act_set_angle_l") {
+            		arg1 = document.getElementById("act_slider-30_l").value;
+            		arg2 = document.getElementById("act_slider-60_l").value;
+            		arg3 = document.getElementById("act_slider-90_l").value;
+            		arg4 = document.getElementById("act_slider-180_l").value;
+            	} else if(obj.name == "act_set_last_angle") {
+            		arg1 = $('input[name=act_set_last_angle]:checked').val();
+            	}
+                var msg = obj.name;
+                httpObj = new XMLHttpRequest();
+                httpObj.open("GET","/ajax/action/"+msg+"?arg1="+arg1+"&arg2="+arg2+"&arg3="+arg3+"&arg4="+arg4);
+                httpObj.send(null);
+                var url_new = document.URL;
+                url_new = url_new.replace("/land", "");
+                url_new = url_new.replace("/port", "");
+                url_new = url_new.replace("/manual", "");
+                url_new = url_new.replace("/setting", "");
+                if(obj.name == "act_main"){
+                	document.location = url_new;
+                } else if(obj.name == "act_show"){
+                    if(window.innerHeight > window.innerWidth){
+                        document.location = url_new + "/port";
+                    }else{
+                        document.location = url_new + "/land";
+                    }
+                } else if(obj.name == "act_setting"){
+                	document.location = url_new + "/setting";
+                } else if(obj.name == "act_manual"){
+                	document.location = url_new + "/manual";
+                }
+            }
+        </script>
+        <!-- Home -->
+        <form method="get" name="ajaxForm" onsubmit="return false;">
+        <div id="home" data-role="page" data-theme="d">
+            <div data-role="header" data-position="fixed" data-theme="d">
+                <h1 style="overflow:visible; white-space:normal; margin:.3em 0;">SAPPOROID SETTING</h1>
+            </div>
+            <div data-role="content">
+	            <label><b>Sensor Setting:</b></label>
+	            <div data-role="fieldcontain">
+		            <label>Range</label>
+					<input type="range" id="act_slider-range" value="[val_range]" min="0" max="10000" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>Color</label>
+					<input type="range" id="act_slider-color" value="[val_color]" min="0" max="300" data-highlight="true" data-mini="true" />
+				</div>
+                <input type="button" name="act_set_sensor" value="Set Sensor" onclick="msgSend(this)">
+                <hr>
+	            <label><b>Color Setting:</b></label>
+	            <div data-role="fieldcontain">
+		            <label>   R </label>
+					<input type="range" id="act_slider-r" value="[val_r]" min="0" max="255" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>   G </label>
+					<input type="range" id="act_slider-g" value="[val_g]" min="0" max="255" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>   B </label>
+					<input type="range" id="act_slider-b" value="[val_b]" min="0" max="255" data-highlight="true" data-mini="true" />
+				</div>
+                <input type="button" name="act_set_color" value="Set Color" onclick="msgSend(this)">
+                <hr>
+	            <label><b>Speed Setting:</b></label>
+	            <div data-role="fieldcontain">
+		            <label> Get </label>
+					<input type="range" id="act_slider-get" value="[val_get]" min="0" max="255" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>Goal </label>
+					<input type="range" id="act_slider-goal" value="[val_goal]" min="0" max="255" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>Back </label>
+					<input type="range" id="act_slider-back" value="[val_back]" min="0" max="255" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>Turn </label>
+					<input type="range" id="act_slider-turn" value="[val_turn]" min="0" max="255" data-highlight="true" data-mini="true" />
+				</div>
+                <input type="button" name="act_set_speed" value="Set Speed" onclick="msgSend(this)">
+                <hr>
+	            <label><b>Left Angle Setting:</b></label>
+	            <div data-role="fieldcontain">
+		            <label>L 30 </label>
+					<input type="range" id="act_slider-30_l" value="[val_30_l]" min="0" max="200" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>L 60 </label>
+					<input type="range" id="act_slider-60_l" value="[val_60_l]" min="0" max="200" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>L 90 </label>
+					<input type="range" id="act_slider-90_l" value="[val_90_l]" min="0" max="200" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>L180 </label>
+					<input type="range" id="act_slider-180_l" value="[val_180_l]" min="0" max="200" data-highlight="true" data-mini="true" />
+				</div>
+                <input type="button" name="act_set_angle_l" value="Set Left Angle" onclick="msgSend(this)">
+                <hr>
+	            <label><b>Right Angle Setting:</b></label>
+	            <div data-role="fieldcontain">
+		            <label>R 30 </label>
+					<input type="range" id="act_slider-30_r" value="[val_30_r]" min="0" max="200" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>R 60 </label>
+					<input type="range" id="act_slider-60_r" value="[val_60_r]" min="0" max="200" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>R 90 </label>
+					<input type="range" id="act_slider-90_r" value="[val_90_r]" min="0" max="200" data-highlight="true" data-mini="true" />
+				</div>
+	            <div data-role="fieldcontain">
+		            <label>R180 </label>
+					<input type="range" id="act_slider-180_r" value="[val_180_r]" min="0" max="200" data-highlight="true" data-mini="true" />
+				</div>
+                <input type="button" name="act_set_angle_r" value="Set Right Angle" onclick="msgSend(this)">
+                <hr>
+	            <label><b>Lase Turn Angle Setting:</b></label>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<input type="radio" name="act_set_last_angle" id="angle_l" value="0" [checked_l] onclick="msgSend(this)" />
+							<label for="angle_l">Left</label>
+						<input type="radio" name="act_set_last_angle" id="angle_r" value="1" [checked_r] onclick="msgSend(this)" />
+							<label for="angle_r">Right</label>
+					</fieldset>
+				</div>
+                <hr>
+            </div>
+            <div data-role="footer" data-theme="d">
+                <div class="ui-grid-c">
+                    <div class="ui-block-a">
+                        <input type="button" name="act_main" value="Main" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="act_show" value="Show" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-c">
+                        <input type="button" name="act_setting" value="Setting" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-d">
+                        <input type="button" name="act_manual" value="Manual" onclick="msgSend(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+</body>
+</html>

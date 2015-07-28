@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:weightSum="7" >
+
+<LinearLayout
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="6" >
+    
+    <robo2014.sapporoid.FdView
+        android:id="@+id/FdView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:focusable="true" />
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linearLayout2"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="6"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="2" >
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="ToggleButton"
+        android:textOff="Auto"
+        android:textOn="Stop" />
+
+    <Button
+        android:id="@+id/btn_set_color"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Color" />
+
+    <Button
+        android:id="@+id/Setting4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="ServoTest" />
+
+    <Button
+        android:id="@+id/Setting5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="ServoTest2" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Default" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textOff="Manual"
+        android:textOn="Stop" />
+</LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:minWidth="400sp" android:minHeight="400sp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="3">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="ControlMode:   " android:gravity="center_vertical" android:layout_weight="2"/>
+	    <RadioGroup
+	        android:id="@+id/radioGroup1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent" android:orientation="horizontal" android:layout_weight="1" android:weightSum="2">
+	
+	        <RadioButton
+	            android:id="@+id/radio0"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:checked="true"
+	            android:text="Multi" android:layout_weight="1"/>
+	
+	        <RadioButton
+	            android:id="@+id/radio1"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:text="Single" android:layout_weight="1"/>
+	
+	    </RadioGroup>
+        
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="3">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="struggleTime:" android:layout_weight="2" android:gravity="center_vertical"/>
+
+        <EditText
+            android:id="@+id/StruggleTime"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="3">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="HangerOrder:   " android:layout_weight="2" android:gravity="center_vertical"/>
+
+	    <RadioGroup
+	        android:id="@+id/radioGroup4"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content" android:orientation="horizontal" android:layout_weight="1" android:weightSum="4">
+	
+	        <RadioButton
+	            android:id="@+id/radio0"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:checked="true"
+	            android:text="CLR" android:layout_weight="1"/>
+	
+	        <RadioButton
+	            android:id="@+id/radio1"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:text="C" android:layout_weight="1"/>
+	
+	        <RadioButton
+	            android:id="@+id/radio2"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:text="LCR" android:layout_weight="1"/>
+
+	        <RadioButton
+	            android:id="@+id/radio3"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:text="RCL" android:layout_weight="1"/>
+	        	
+	    </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="3">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Display:   " android:layout_weight="2" android:gravity="center_vertical"/>
+        
+	    <RadioGroup
+	        android:id="@+id/radioGroup5"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent" android:orientation="horizontal" android:layout_weight="1" android:weightSum="3">
+	
+	        <RadioButton
+	            android:id="@+id/radio0"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:checked="true"
+	            android:text="ON" android:layout_weight="1"/>
+	
+	        <RadioButton
+	            android:id="@+id/radio1"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:text="OFF" android:layout_weight="1"/>
+	        
+	        <RadioButton
+	            android:id="@+id/radio2"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:text="MAX" android:layout_weight="1"/>
+	        
+	    </RadioGroup>
+            </LinearLayout>
+	        
+        
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/button_SB_OK"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="OK" />
+
+    </LinearLayout>
+
+</LinearLayout>

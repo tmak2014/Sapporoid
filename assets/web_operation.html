@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <base href="/robo/">
+        <meta charset="utf-8"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="viewport" content="width=device-width, maximum-scale=1.5, minimum-scale=1.0,user-scalable=yes,initial-scale=1.0"/>
+        <title>SAPPOROID CAMERA VIEW TEST</title>
+        <link rel="stylesheet" href="http://nonakaryuichi.github.com/jQueryMobileSite/css/classmethod.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <style type="text/css">
+            h1 {
+                overflow:visible;
+                white-space:normal;
+            }
+        </style>
+</head>
+<body>
+        <script type="text/javascript">
+            function msgSend(obj)
+            {
+                var msg = obj.name;
+                httpObj = new XMLHttpRequest();
+                httpObj.open("GET","/ajax/action/"+msg);
+                httpObj.send(null);
+                if(obj.name == "act_show"){
+                    if(window.innerHeight > window.innerWidth){
+                        document.location = document.URL + "/port";
+                    }else{
+                        document.location = document.URL + "/land";
+                    }
+                }
+            }
+        </script>
+        <!-- Home -->
+        <form method="get" name="ajaxForm" onsubmit="return false;">
+        <div id="home" data-role="page">
+            <div data-role="header" data-position="fixed">
+                <h1 style="overflow:visible; white-space:normal; margin:.3em 0;">SAPPOROID CAMERA VIEW TEST</h1>
+            </div>
+            <div data-role="content">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action1" value="get_LM_RD" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="tank_action2" value="get_LD_RM" onclick="msgSend(this)">
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action3" value="get_LB_RM" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="tank_action4" value="get_LM_RB" onclick="msgSend(this)">
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action5" value="bring_LM_RD" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="tank_action6" value="bring_LD_RM" onclick="msgSend(this)">
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action7" value="bring_LB_RM" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="tank_action8" value="bring_LM_RB" onclick="msgSend(this)">
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action9" value="put" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="tank_action10" value="hand_Special" onclick="msgSend(this)">
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action11" value="get_Special" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="tank_action12" value="put_Special" onclick="msgSend(this)">
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action13" value="Banzai" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="tank_action14" value="Default" onclick="msgSend(this)">
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action19" value="Stop" onclick="msgSend(this)">
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action15" value="Forward" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="tank_action16" value="Back" onclick="msgSend(this)">
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="button" name="tank_action17" value="TurnLeft" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="tank_action18" value="TurnRight" onclick="msgSend(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+</body>
+</html>

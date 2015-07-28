@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:weightSum="10" android:minHeight="400sp" android:minWidth="400sp">
+
+    <LinearLayout
+        android:id="@+id/linear_red"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_weight="3">
+
+        <LinearLayout
+            android:id="@+id/red_sample"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red  " android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/red_sample"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="sample" android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/red_layout_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:orientation="horizontal" android:weightSum="9">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" android:layout_weight="3" android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/red_r_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="R: 0" android:layout_weight="1" android:gravity="center"/>
+
+                <SeekBar
+                    android:id="@+id/red_r_seekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" android:layout_weight="3" android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/red_g_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="G: 0" android:layout_weight="1" android:gravity="center"/>
+
+                <SeekBar
+                    android:id="@+id/red_g_seekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" android:layout_weight="3" android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/red_b_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B: 0" android:layout_weight="1" android:gravity="center"/>
+
+                <SeekBar
+                    android:id="@+id/red_b_seekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_weight="3">
+        <LinearLayout
+            android:id="@+id/white_sample"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Green" android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/white_sample"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="sample" android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/white_layout_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:orientation="horizontal" android:weightSum="9">
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" android:layout_weight="3" android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/white_r_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="R: 0" android:layout_weight="1" android:gravity="center"/>
+
+                <SeekBar
+                    android:id="@+id/white_r_seekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" android:layout_weight="3" android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/white_g_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="G: 0" android:layout_weight="1" android:gravity="center"/>
+
+                <SeekBar
+                    android:id="@+id/white_g_seekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" android:layout_weight="3" android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/white_b_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B: 0" android:layout_weight="1" android:gravity="center"/>
+
+                <SeekBar
+                    android:id="@+id/white_b_seekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_black"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_weight="3">
+
+        <LinearLayout
+            android:id="@+id/black_sample"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Black" android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/black_sample"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="sample" android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/black_layout_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:orientation="horizontal" android:weightSum="9">
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" android:layout_weight="3" android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/black_r_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="R: 0" android:layout_weight="1" android:gravity="center"/>
+
+                <SeekBar
+                    android:id="@+id/black_r_seekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout8"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" android:layout_weight="3" android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/black_g_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="G: 0" android:layout_weight="1" android:gravity="center"/>
+
+                <SeekBar
+                    android:id="@+id/black_g_seekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" android:layout_weight="3" android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/black_b_value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B: 0" android:layout_weight="1" android:gravity="center"/>
+
+                <SeekBar
+                    android:id="@+id/black_b_seekBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="OK" />
+
+    </LinearLayout>
+</LinearLayout>

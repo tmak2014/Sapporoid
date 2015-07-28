@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <base href="/robo/land/">
+        <meta charset="utf-8"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="viewport" content="width=device-width, maximum-scale=1.5, minimum-scale=1.0,user-scalable=yes,initial-scale=1.0"/>
+        <title>SAPPOROID CAMERA VIEW TEST</title>
+        <link rel="stylesheet" href="http://nonakaryuichi.github.com/jQueryMobileSite/css/classmethod.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <style type="text/css">
+            h1 {
+                overflow:visible;
+                white-space:normal;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            window.onload = funcOnLoad();
+            function funcOnLoad() {
+                setInterval("funcInterval()", 500);
+            }
+            function funcInterval() {
+                var c_image = document.getElementById("camera_image");
+                var ajax = new XMLHttpRequest();
+                ajax.open("GET","/ajax/image");
+                ajax.onreadystatechange = function() {
+                    if( ajax != null && ajax.readyState == 4 && ajax.responseText != "") {
+                        c_image.src = ajax.responseText;
+                    }
+                };
+                ajax.send(null);
+            }
+            $(document).ready(function() {
+                $(window).bind("orientationchange", function(e){
+                    var url_old = document.URL;
+                    var url_new;
+                    if(e.orientation=="portrait"){
+                        url_new = url_old.replace("/land", "/port");
+                    }else{
+                        url_new = url_old.replace("/port", "/land");
+                    }
+                    document.location = url_new;
+                });
+            });
+            function msgSend(obj) {
+                var arg1 = "";
+            	if(obj.name == "act_set_sound"){
+            		arg1 = obj.options[obj.selectedIndex].text;
+            	} else if(obj.name == "act_speach") {
+            		arg1 = document.getElementById("speach_text").value;
+            	}
+                var msg = obj.name;
+                httpObj = new XMLHttpRequest();
+                httpObj.open("GET","/ajax/action/"+msg+"?arg1="+arg1);
+                httpObj.send(null);
+                var url_new = document.URL;
+                url_new = url_new.replace("/land", "");
+                url_new = url_new.replace("/port", "");
+                url_new = url_new.replace("/manual", "");
+                url_new = url_new.replace("/setting", "");
+                if(obj.name == "act_main"){
+                	document.location = url_new;
+                } else if(obj.name == "act_show"){
+                    if(window.innerHeight > window.innerWidth){
+                        document.location = url_new + "/port";
+                    }else{
+                        document.location = url_new + "/land";
+                    }
+                } else if(obj.name == "act_setting"){
+                	document.location = url_new + "/setting";
+                } else if(obj.name == "act_manual"){
+                	document.location = url_new + "/manual";
+                }
+            }
+            function ring() {
+                document.getElementById("Sound1").play();
+            }
+        </script>
+        <audio id="Sound1" preload="auto">
+            <source src="./sound/se_maoudamashii_system49.mp3" type="audio/mp3">
+            <source src="./sound/se_maoudamashii_system49.ogg" type="audio/ogg">
+            <source src="./sound/se_maoudamashii_system49.wav" type="audio/wav">
+            <p>※お使いのブラウザは、残念ながらHTML5のaudio要素をサポートしていないようですから、音は鳴りません。</p>
+        </audio>
+        <!-- Home -->
+        <form method="get" name="ajaxForm" onsubmit="return false;">
+        <div id="home" data-role="page">
+            <div data-role="header" data-position="fixed">
+                <h1 style="overflow:visible; white-space:normal; margin:.3em 0;">SAPPOROID CAMERA VIEW TEST</h1>
+            </div>
+            <div data-role="content">
+                <table height="100%" width="100%">
+                    <tr>
+                        <td>
+                            <label for="switch1">switch1</label>
+                            <select name="switch1" id="switch1" data-role="slider" onChange="msgSend(this)">
+                                <option value="off">Off</option>
+                                <option value="on">On</option>
+                            </select>
+                        </td>
+                        <td rowspan="2" align="center">
+[camera_image_land]
+                        </td>
+                        <td>
+                            <label for="switch2">switch2</label>
+                            <select name="switch2" id="switch2" data-role="slider" onChange="msgSend(this)">
+                                <option value="off">Off</option>
+                                <option value="on">On</option>
+                            </select>
+                        </td>
+                    </tr>
+                    </tr>
+                </table>
+	            <div>
+		            <input type="text" name="act_speach" id="speach_text" value="" placeholder="確定後に実行 or Speachボタン" onchange="msgSend(this)" />
+		            <input type="button" value="Speach" name="act_speach" onclick="msgSend(this)">
+	            </div>
+            </div>
+            <div data-role="footer">
+                <div class="ui-grid-c">
+                    <div class="ui-block-a">
+                        <input type="button" name="act_main" value="Main" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="button" name="act_show" value="Show" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-c">
+                        <input type="button" name="act_setting" value="Setting" onclick="msgSend(this)">
+                    </div>
+                    <div class="ui-block-d">
+                        <input type="button" name="act_manual" value="Manual" onclick="msgSend(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+</html>

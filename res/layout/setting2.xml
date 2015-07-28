@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:minWidth="400sp" android:clickable="false" android:minHeight="400sp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="20">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="ToGet: " android:layout_weight="7" android:gravity="center_vertical"/>
+
+        <SeekBar
+            android:id="@+id/st2_seekBar_1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/st2_bar1_value"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:text="100" android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="20">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="ToGoal: " android:layout_weight="7" android:gravity="center_vertical"/>
+
+        <SeekBar
+            android:id="@+id/st2_seekBar_2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/st2_bar2_value"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:text="100" android:gravity="center"/>
+
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="20">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="ToLine:   " android:layout_weight="7" android:gravity="center_vertical"/>
+
+        <SeekBar
+            android:id="@+id/st2_seekBar_3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/st2_bar3_value"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:text="100" android:gravity="center"/>
+
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="20">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="ToEsc_Back:   " android:layout_weight="7" android:gravity="center_vertical"/>
+
+        <SeekBar
+            android:id="@+id/st2_seekBar_4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/st2_bar4_value"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:text="100" android:gravity="center"/>
+
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="20">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="ToEsc_Turn_L:" android:layout_weight="7" android:gravity="center_vertical"/>
+
+        <SeekBar
+            android:id="@+id/st2_seekBar_5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/st2_bar5_value"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:text="100" android:gravity="center"/>
+
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:weightSum="20">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="ToEsc_Turn_R" android:layout_weight="7" android:gravity="center_vertical"/>
+
+        <SeekBar
+            android:id="@+id/st2_seekBar_6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/st2_bar6_value"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:text="100" android:gravity="center"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="OK" />
+
+    </LinearLayout>
+        
+</LinearLayout>

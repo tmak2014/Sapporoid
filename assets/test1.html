@@ -1,0 +1,74 @@
+<html>
+    <meta name='refresh' content='1'>
+    <body>
+        <script>
+            window.onload = funcOnLoad();
+            function funcOnLoad() {
+                setInterval('funcInterval()', 500);
+            }
+            function funcInterval() {
+                var ajax;
+                var cnt0 = 0;
+                var txt1 = document.getElementById('text1');
+                var c_image = document.getElementById('camera_image');
+                txt1.innerHTML = cnt0++;
+                ajax = new XMLHttpRequest();
+                ajax.open('GET','/ajax/image');
+                ajax.onreadystatechange = function(){
+                    if( ajax != null && ajax.readyState == 4) {
+                        c_image.src = ajax.responseText;
+                    }
+                };
+                ajax.send(null);
+            }
+        </script>
+        <h1>SAPPOROID CAMERA VIEW TEST</h1>
+        <div id='text1'>0</div>
+        <div id='text2'>0</div>
+        <div id='text3'>0</div>
+        <div id='text4'>0</div>
+[camera_image]
+        <script type='text/javascript'>
+//            var url = location.href;
+            function dataSave()
+            {
+                textData1 = document.ajaxForm.val1.value;
+                textData2 = document.ajaxForm.val2.value;
+                textData3 = document.ajaxForm.val3.value;
+                textData4 = document.ajaxForm.val4.value;
+                textData5 = document.ajaxForm.val5.value;
+                textData6 = document.ajaxForm.val6.value;
+                sendData =  'val1='+encodeURI(textData1);
+                sendData += '&val2='+encodeURI(textData2);
+                sendData += '&val3='+encodeURI(textData3);
+                sendData += '&val4='+encodeURI(textData4);
+                sendData += '&val5='+encodeURI(textData5);
+                sendData += '&val6='+encodeURI(textData6);
+                httpObj = createXMLHttpRequest(null);
+                if (httpObj)
+                {
+                    httpObj.open('POST','save.rb',true);
+                    httpObj.send(sendData);
+                }
+            }
+        </script>
+        <form method='post' name='ajaxForm' action='action1' onsubmit='dataSave();return false;'>
+            <textarea name='val1' cols='20' rows='4'>1</textarea><br>
+            <textarea name='val2' cols='20' rows='4'>2</textarea><br>
+            <textarea name='val3' cols='20' rows='4'>3</textarea><br>
+            <textarea name='val4' cols='20' rows='4'>4</textarea><br>
+            <textarea name='val5' cols='20' rows='4'>5</textarea><br>
+            <textarea name='val6' cols='20' rows='4'>6</textarea><br>
+            <input type='submit' value='send' action='action1'>
+        </form>
+        <form method='post' name='ajaxForm' action='action2' onsubmit='dataSave();return false;'>
+            <textarea name='val11' cols='20' rows='4'>9</textarea><br>
+            <textarea name='val12' cols='20' rows='4'>8</textarea><br>
+            <textarea name='val13' cols='20' rows='4'>7</textarea><br>
+            <textarea name='val14' cols='20' rows='4'>6</textarea><br>
+            <textarea name='val15' cols='20' rows='4'>5</textarea><br>
+            <textarea name='val16' cols='20' rows='4'>4</textarea><br>
+            <input type='submit' value='send'>
+        </form>
+    </body>
+</html>
